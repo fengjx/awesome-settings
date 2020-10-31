@@ -1,10 +1,14 @@
 dist: xenial
 
-language: c
+language: python
+python:
+  - "2.7"
+  - "3.8"
 
 addons:
   apt:
     packages:
+      - git
       - curl
       - wget
 

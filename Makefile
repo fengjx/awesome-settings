@@ -4,6 +4,7 @@
 _github:
 	@git config user.name "FengJianxin"
 	@git config user.email "fengjianxin2012@gmail.com"
+	@git remote set-url origin https://${GH_TOKEN}@github.com/fengjx/awesome-settings.git
 	@git add .
 	@git commit -m "auto update"
 	@git push origin main
