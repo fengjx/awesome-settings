@@ -5,6 +5,7 @@ LUAROCKS_VER ?= $(shell luarocks --version | grep -E -o  "luarocks [0-9]+.")
 .PHONY: default
 
 _github:
+	@echo `pwd`
 	@git config user.name "FengJianxin"
 	@git config user.email "fengjianxin2012@gmail.com"
 	@git add .
