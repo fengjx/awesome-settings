@@ -1,0 +1,21 @@
+dist: xenial
+
+language: c
+
+addons:
+  apt:
+    packages:
+      - curl
+      - wget
+
+before_install:
+  - echo "before"
+
+install:
+  - echo "install"
+
+script:
+  - make gfw2pac
+
+after_success:
+  - echo "build after"
