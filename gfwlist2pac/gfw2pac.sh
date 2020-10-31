@@ -13,8 +13,4 @@ genpac --format=pac \
     --gfwlist-local=~/gfwlist.txt \
     -o gfwlist.pac
 
-git config user.name "FengJianxin"
-git config user.email "fengjianxin2012@gmail.com"
-git add .
-git commit -m "[$(LANG=C date)] auto update"
-git push origin main
+
