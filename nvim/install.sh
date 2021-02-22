@@ -13,6 +13,7 @@ echo '[*] 项目依赖：neovim node npm python3 python3-pip python3-venv git cu
 
 settings_dir=~/opt/awesome-settings
 
+rm -rf $settings_dir
 git clone git@github.com:fengjx/awesome-settings.git $settings_dir
 
 echo '[*] 创建 Neovim 配置文件目录 ...'
