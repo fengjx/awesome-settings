@@ -1,0 +1,55 @@
+snippet _m "create setmetatable for _M" b
+
+local setmetatable = setmetatable
+
+local _M = {}
+
+local mt = {__index = _M}
+
+$0
+
+function _M.new()
+	local obj = {}
+	return setmetatable(obj, mt)
+end
+
+return _M
+
+endsnippet
+
+
+snippet log.d "log.debug()" b
+log.debug("$0")
+endsnippet
+	
+snippet log.i "log.info()" b
+log.info("$0")
+endsnippet
+
+snippet log.e "log.error()" b
+log.error("$0")
+endsnippet
+
+snippet log.n "log.notice()" b
+log.notice("$0")
+endsnippet
+
+snippet log.w "log.warn()" b
+log.warn("$0")
+endsnippet
+
+snippet log.c "log.crit()" b
+log.crit("$0")
+endsnippet
+
+snippet log.a "log.alert()" b
+log.alert("$0")
+endsnippet
+
+snippet log.em "log.emerg()" b
+log.emerg("$0")
+endsnippet
+
+snippet log.s "log.stderr()" b
+log.stderr("$0")
+endsnippet

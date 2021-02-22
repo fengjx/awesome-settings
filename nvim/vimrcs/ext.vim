@@ -28,7 +28,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
 " Multiple Plug commands can be written in a single line using | separators
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
@@ -187,6 +188,11 @@ let g:coc_global_extensions = [ 'coc-sh', 'coc-snippets', 'coc-pairs', 'coc-list
             \ 'coc-emmet', 'coc-xml', 'coc-yaml',
             \ 'coc-markdownlint', 'coc-highlight', 'coc-go', 'coc-lua',
                         \ 'coc-sql', 'coc-metals', 'coc-vetur' ]
+
+"==============================================================================
+" coc-snippets 自定义代码片段
+"==============================================================================
+snippets.userSnippetsDirectory = $HOME . ".vim/ultisnips"
 
 "==============================================================================
 " vim-go 插件
