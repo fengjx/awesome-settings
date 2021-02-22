@@ -1,5 +1,5 @@
-source ~/.vim/vimrcs/basic.vim 
-source ~/.vim/vimrcs/ext.vim 
+source ~/.vim/vimrcs/base.vim
+source ~/.vim/vimrcs/ext.vim
 
 if filereadable("./.vimrc.vim")
   source ./.vimrc.vim
