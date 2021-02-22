@@ -1,36 +1,40 @@
 #!/usr/bin/env bash
 
+echo '[*] 项目依赖：neovim node npm python3 python3-pip python3-venv git curl universal-ctags，根据不同操作系统自行安装'
 
 bak_dir=~/.vimbak-`date +%Y%m%d%H%M%S`/
 echo "[*] 备份 vim 配置: "${bak_dir}
 
 mkdir ${bak_dir}
 
-mv ~/.vimrc	${bak_dir}
-mv ~/.vim ${bak_dir}
+if [ -f "$HOME/.vimrc" ]; then
+  mv ~/.vimrc	${bak_dir}
+fi
 
-echo '[*] 项目依赖：neovim node npm python3 python3-pip python3-venv git curl universal-ctags，根据不同操作系统自行安装'
+if [ -d "$HOME/.vim" ]; then
+  mv ~/.vim ${bak_dir}
+fi
 
-settings_dir=~/opt/awesome-settings
+settings_dir=$HOME/opt/awesome-settings
 
-rm -rf $settings_dir
-git clone git@github.com:fengjx/awesome-settings.git $settings_dir
+if [ ! -d "$settings_dir" ]; then
+  git clone git@github.com:fengjx/awesome-settings.git $settings_dir
+else
+  cd $settings_dir
+  git pull
+fi
 
 echo '[*] 创建 Neovim 配置文件目录 ...'
 mkdir -p ~/.config/nvim
 
-ln -s $settings_dir/nvim ~/.vim
-ln -s $settings_dir/nvim/.vimrc ~/.config/nvim/init.vim
+ln -s $settings_dir/nvim $HOME/.vim
+ln -s $settings_dir/nvim/.vimrc $HOME/.config/nvim/init.vim
+ln -s $settings_dir/nvim/coc/coc-settings.json $HOME/.config/nvim/coc-settings.json
+ln -s $settings_dir/nvim/ultisnips $HOME/.config/nvim/my-snippets
 
 # Install virtualenv to containerize dependencies
 echo '[*] 安装 python相关依赖 - neovim pynvim jedi psutil setproctitle yapf doq'
-rm -rf ~/.config/nvim/env
-python3 -m venv ~/.config/nvim/env
-
-source ~/.config/nvim/env/bin/activate
-# run `pip uninstall neovim pynvim` if still using old neovim module
-pip3 install neovim pynvim jedi psutil setproctitle yapf doq
-deactivate
+pip3 install neovim pynvim jedi psutil setproctitle yapf doq # run `pip uninstall neovim pynvim` if still using old neovim module
 
 # install vim-plug
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then

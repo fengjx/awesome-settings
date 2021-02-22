@@ -187,16 +187,12 @@ let g:coc_global_extensions = [ 'coc-sh', 'coc-snippets', 'coc-pairs', 'coc-list
             \ 'coc-java', 'coc-pyright', 'coc-jedi', 'coc-flutter',
             \ 'coc-emmet', 'coc-xml', 'coc-yaml',
             \ 'coc-markdownlint', 'coc-highlight', 'coc-go', 'coc-lua',
-                        \ 'coc-sql', 'coc-metals', 'coc-vetur' ]
-
-"==============================================================================
-" coc-snippets 自定义代码片段
-"==============================================================================
-snippets.userSnippetsDirectory = $HOME . ".vim/ultisnips"
+            \ 'coc-sql', 'coc-metals', 'coc-vetur' ]
 
 "==============================================================================
 " vim-go 插件
 "==============================================================================
+
 let g:go_fmt_command = "goimports" " 格式化将默认的 gofmt 替换
 let g:go_autodetect_gopath = 1
 let g:go_list_type = "quickfix"
