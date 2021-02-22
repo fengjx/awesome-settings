@@ -1,1 +1,4 @@
 .vscode
+nvim/plugged/
+nvim/sessions/
+nvim/undodir/
