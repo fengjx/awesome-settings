@@ -31,6 +31,7 @@ mkdir -p $HOME/.vim
 ln -s $settings_dir/nvim/.vimrc $HOME/.vim/.vimrc
 ln -s $settings_dir/nvim/vimrcs $HOME/.vim/vimrcs
 ln -s $settings_dir/nvim/.vimrc $HOME/.config/nvim/init.vim
+ln -s $settings_dir/nvim/lua $HOME/.config/nvim/lua
 ln -s $settings_dir/nvim/coc/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $settings_dir/nvim/ultisnips $HOME/.config/nvim/my-snippets
 
