@@ -70,6 +70,8 @@ Plug 'itchyny/vim-cursorword'
 " Initialize plugin system
 call plug#end()
 
+""" Python3 VirtualEnv
+let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
 
 " theme
 set background=dark

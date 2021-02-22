@@ -25,16 +25,23 @@ else
 fi
 
 echo '[*] 创建 Neovim 配置文件目录 ...'
-mkdir -p ~/.config/nvim
+mkdir -p $HOME/.config/nvim
+mkdir -p $HOME/.vim
 
-ln -s $settings_dir/nvim $HOME/.vim
+ln -s $settings_dir/nvim/.vimrc $HOME/.vim/.vimrc
+ln -s $settings_dir/nvim/vimrcs $HOME/.vim/vimrcs
 ln -s $settings_dir/nvim/.vimrc $HOME/.config/nvim/init.vim
 ln -s $settings_dir/nvim/coc/coc-settings.json $HOME/.config/nvim/coc-settings.json
 ln -s $settings_dir/nvim/ultisnips $HOME/.config/nvim/my-snippets
 
 # Install virtualenv to containerize dependencies
 echo '[*] 安装 python相关依赖 - neovim pynvim jedi psutil setproctitle yapf doq'
+if [ ! -d "$HOME/.config/nvim/env" ]; then
+  python3 -m venv $HOME/.config/nvim/env
+fi
+source $HOME/.config/nvim/env/bin/activate
 pip3 install neovim pynvim jedi psutil setproctitle yapf doq # run `pip uninstall neovim pynvim` if still using old neovim module
+deactivate
 
 # install vim-plug
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
