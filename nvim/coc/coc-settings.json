@@ -1,3 +1,30 @@
 {
-	"snippets.userSnippetsDirectory": "~/.config/nvim/my-snippets"
+	"snippets.userSnippetsDirectory": "~/.config/nvim/my-snippets",
+	"languageserver": {
+		"go": {
+		  "command": "gopls",
+		  "rootPatterns": ["go.mod"],
+		  "trace.server": "verbose",
+		  "filetypes": ["go"]
+		},
+		"lua": {
+			"command": "lua-lsp",
+			"filetypes": ["lua"]
+		  },
+		"ccls": {
+			"command": "ccls",
+			"filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"],
+			"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+			"initializationOptions": {
+				"cache": {
+				"directory": "/tmp/ccls"
+				}
+			}
+		},
+		"metals": {
+			"command": "metals-vim",
+			"rootPatterns": ["build.sbt"],
+			"filetypes": ["scala", "sbt"]
+		  }
+	  }
 }
