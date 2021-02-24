@@ -41,7 +41,7 @@ if [ ! -d "$HOME/.config/nvim/env" ]; then
   python3 -m venv $HOME/.config/nvim/env
 fi
 source $HOME/.config/nvim/env/bin/activate
-pip3 install neovim pynvim jedi psutil setproctitle yapf doq # run `pip uninstall neovim pynvim` if still using old neovim module
+pip install neovim pynvim jedi psutil setproctitle yapf doq # run `pip uninstall neovim pynvim` if still using old neovim module
 deactivate
 
 # install vim-plug
