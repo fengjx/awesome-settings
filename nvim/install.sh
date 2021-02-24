@@ -18,7 +18,7 @@ fi
 settings_dir=$HOME/opt/awesome-settings
 
 if [ ! -d "$settings_dir" ]; then
-  git clone git@github.com:fengjx/awesome-settings.git $settings_dir
+  git clone https://github.com/fengjx/awesome-settings.git $settings_dir
 else
   cd $settings_dir
   git pull
