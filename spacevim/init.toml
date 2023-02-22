@@ -39,6 +39,26 @@
     # 默认情况下文件树是在窗口的右边打开
     filetree_direction = "left"
 
+    # Enable/Disable show mode on statusline
+    enable_statusline_mode = true
+    # left sections of statusline
+    statusline_left_sections = [
+       'winnr',
+       'major mode',
+       'filename',
+       # 'fileformat',
+       'minor mode lighters',
+       'version control info',
+       'search status'
+    ]
+    # right sections of statusline
+    statusline_right_sections = [
+       'cursorpos',
+       'percentage',
+       'input method',
+       'date',
+       'time'
+    ]
 
 # SpaceVim 模块设置，主要包括启用/禁用模块
 
@@ -68,6 +88,26 @@
     name = "lang#python"
 
 [[layers]]
+  name = "lang#javascript"
+
+[[layers]]
+  name = "lang#typescript"
+
+[[layers]]
+  name = "lang#lua"
+
+[[layers]]
+  name = "lang#dockerfile"
+
+[[layers]]
+  name = "lang#markdown"
+
+[[layers]]
+  name = "test"
+  [layers.override_config]
+    go_runner = "delve"
+
+[[layers]]
     name = "format"
 
 [[layers]]
@@ -90,6 +130,37 @@
 [[layers]]
     # 搜索结果展示
     name = "incsearch"
+
+[[layers]]
+  name = "VersionControl"
+
+[[layers]]
+  name = "git"
+  git-plugin = "fugitive"
+
+[[layers]]
+  name = "fzf"
+
+[[layers]]
+  name="edit"
+
+[[layers]]
+  name="tools"
+
+[[layers]]
+  name = "core#statusline"
+
+[[layers]]
+  name = "default"
+
+[[layers]]
+  name="core"
+
+[[layers]]
+  name = "tmux"
+
+[[layers]]
+  name="core#tabline"
 
 # 添加自定义插件 lilydjwg/colorizer
 [[custom_plugins]]
