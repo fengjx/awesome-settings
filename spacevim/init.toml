@@ -39,6 +39,27 @@
     # 默认情况下文件树是在窗口的右边打开
     filetree_direction = "left"
 
+    autocomplete_method = "coc"
+    # Enable/Disable show mode on statusline
+    enable_statusline_mode = true
+    # left sections of statusline
+    statusline_left_sections = [
+       'winnr',
+       'major mode',
+       'filename',
+       # 'fileformat',
+       'minor mode lighters',
+       'version control info',
+       'search status'
+    ]
+    # right sections of statusline
+    statusline_right_sections = [
+       'cursorpos',
+       'percentage',
+       'input method',
+       'date',
+       'time'
+    ]
 
 # SpaceVim 模块设置，主要包括启用/禁用模块
 
@@ -68,6 +89,23 @@
     name = "lang#python"
 
 [[layers]]
+  name = "lang#javascript"
+
+[[layers]]
+  name = "lang#lua"
+
+[[layers]]
+  name = "lang#dockerfile"
+
+[[layers]]
+  name = "lang#markdown"
+
+[[layers]]
+  name = "test"
+  [layers.override_config]
+    go_runner = "delve"
+
+[[layers]]
     name = "format"
 
 [[layers]]
@@ -95,16 +133,35 @@
   name = 'edit'
   autosave_timeout = 10000
   autosave_location = '~/.cache/spacevim/backup/'
+  name = "VersionControl"
+
+[[layers]]
+  name = "git"
+  git-plugin = "fugitive"
+
+[[layers]]
+  name = "fzf"
+
+[[layers]]
+  name="tools"
 
 [[layers]]
   name = "default"
+
+[[layers]]
+  name="core"
+
+[[layers]]
+  name = "tmux"
+
+[[layers]]
+  name="core#tabline"
 
 # 添加自定义插件 lilydjwg/colorizer
 [[custom_plugins]]
     repo = "lilydjwg/colorizer"
     merged = false
 
-# 添加自定义插件 junegunn/vader.vim
 [[custom_plugins]]
     repo = "junegunn/vader.vim"
     merged = false
