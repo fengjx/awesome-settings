@@ -91,6 +91,14 @@
     # 搜索结果展示
     name = "incsearch"
 
+[[layers]]
+  name = 'edit'
+  autosave_timeout = 10000
+  autosave_location = '~/.cache/spacevim/backup/'
+
+[[layers]]
+  name = "default"
+
 # 添加自定义插件 lilydjwg/colorizer
 [[custom_plugins]]
     repo = "lilydjwg/colorizer"
