@@ -12,7 +12,7 @@ filemanager = "defx"
 vim_help_language = "cn"
 # 设置 SpaceVim 主题及背景，默认的主题是 gruvbox，如果你需要使用更
 # 多的主题，你可以载入 colorscheme 模块 https://spacevim.org/cn/layers/colorscheme/
-colorscheme = "palenight"
+colorscheme = "NeoSolarized"
 # 背景可以取值 "dark" 或 "light"
 colorscheme_bg = "dark"
 # 启用/禁用终端真色，在目前大多数终端下都是支持真色的，当然也有
@@ -103,11 +103,15 @@ name = "chinese"
 # https://spacevim.org/cn/layers/autocomplete/
 name = "autocomplete"
 # auto_completion_return_key_behavior = "complete"
-auto_completion_return_key_behavior = "nil"
+auto_completion_return_key_behavior = "smart"
 auto_completion_tab_key_behavior = "smart"
-auto_completion_delay = 200
-auto_completion_complete_with_key_sequence = "nil"
+auto_completion_delay = 50
+auto_completion_complete_with_key_sequence = "j"
 auto_completion_complete_with_key_sequence_delay = 0.1
+
+[[layers]]
+name = "lsp"
+filetypes = ["rust", "javascript", "go"]
 
 # 禁用 shell 模块，禁用模块时，需要加入 enable = false
 [[layers]]
@@ -120,6 +124,9 @@ default_height = 30
 [[layers]]
 name = "lang#go"
 format_on_save = true
+
+[[layers]]
+name = "lang#rust"
 
 [[layers]]
 name = "lang#python"
