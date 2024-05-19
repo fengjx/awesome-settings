@@ -9,7 +9,7 @@ if ! hash genpac 2>/dev/null; then
 fi
 
 genpac --format=pac \
-    --pac-proxy="SOCKS5 127.0.0.1:1080" \
+    --pac-proxy="SOCKS5 192.168.1.254:1080" \
     --gfwlist-local=~/gfwlist.txt \
     -o gfwlist.pac
 
