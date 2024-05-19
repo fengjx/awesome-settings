@@ -12,7 +12,7 @@ filemanager = "defx"
 vim_help_language = "cn"
 # 设置 SpaceVim 主题及背景，默认的主题是 gruvbox，如果你需要使用更
 # 多的主题，你可以载入 colorscheme 模块 https://spacevim.org/cn/layers/colorscheme/
-colorscheme = "one"
+colorscheme = "palenight"
 # 背景可以取值 "dark" 或 "light"
 colorscheme_bg = "dark"
 # 启用/禁用终端真色，在目前大多数终端下都是支持真色的，当然也有
@@ -23,6 +23,8 @@ enable_guicolors = true
 # 禁用分割符号，默认为箭头 "arrow"
 statusline_separator = "nil"
 statusline_iseparator = "bar"
+# Set the statusline separators of inactive statusline
+statusline_inactive_separator = "bar"
 # 设置顶部标签列表序号类型，有以下五种类型，分别是 0 - 4
 # 0: 1 ➛ ➊
 # 1: 1 ➛ ➀
@@ -42,8 +44,8 @@ snippet_engine = "ultisnips"
 filetree_direction = "left"
 
 autocomplete_method = "coc"
-# Enable/Disable show mode on statusline
-# enable_statusline_mode = true
+spacevim_enable_vimfiler_filetypeicon = true
+
 # left sections of statusline
 statusline_left_sections = [
   'winnr',
@@ -54,6 +56,7 @@ statusline_left_sections = [
   'version control info',
   'search status',
 ]
+
 # right sections of statusline
 statusline_right_sections = [
   'cursorpos',
@@ -64,6 +67,21 @@ statusline_right_sections = [
 ]
 
 # SpaceVim 模块设置，主要包括启用/禁用模块
+# right sections of statusline
+lint_on_the_fly = true
+go_rename_command = 'gopls'
+go_metalinter_command = 'golangci-lint'
+go_metalinter_autosave = true
+go_metalinter_enabeld = [
+  'deadcode',
+  'errcheck',
+  'gosimple',
+  'govet',
+  'staticcheck',
+  'typecheck',
+  'unused',
+  'varcheck',
+]
 
 [[layers]]
 name = 'core'
@@ -105,6 +123,7 @@ format_on_save = true
 
 [[layers]]
 name = "lang#python"
+format_on_save = true
 
 [[layers]]
 name = "lang#javascript"
